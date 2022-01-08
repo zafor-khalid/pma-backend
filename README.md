@@ -8,3 +8,10 @@
 
 # Run django app
 #### py manage.py runserver
+
+# Docs
+#### https://django-rest-framework-simplejwt.readthedocs.io/en/latest/
+
+# Database 
+#### create a database
+#### DB_NAME : project_management
