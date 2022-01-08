@@ -1,10 +1,10 @@
 # Project-Management-Api
-Install Python
+# Install Python
 then...
 pip install virtualenv
 py -m venv (environment name)
 Scripts\activate
 pip install -r requirements.txt
 
-#run django app
+# run django app
 py manage.py startapp (app name)
