@@ -18,3 +18,6 @@
 # Database 
 #### create a database
 #### DB_NAME : project_management
+
+# End Point List
+#### http://127.0.0.1:8000/swagger/
