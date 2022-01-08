@@ -7,7 +7,10 @@
 #### pip install -r requirements.txt
 
 # Run django app
+#### py manage.py migrate
+#### py manage.py createsuperuser
 #### py manage.py runserver
+
 
 # Docs
 #### https://django-rest-framework-simplejwt.readthedocs.io/en/latest/
