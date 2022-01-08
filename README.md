@@ -1,10 +1,10 @@
 # Project-Management-Api
 # Install Python
-then...
-## pip install virtualenv
-## py -m venv (environment name)
-## Scripts\activate
-## pip install -r requirements.txt
+# Basic Command List
+#### pip install virtualenv
+#### py -m venv (environment name)
+#### Scripts\activate
+#### pip install -r requirements.txt
 
-# run django app
-py manage.py runserver
+# Run django app
+#### py manage.py runserver
