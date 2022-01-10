@@ -13,7 +13,10 @@ class Project(models.Model):
 class Task(models.Model):
     project_title = models.ForeignKey(Project, on_delete=models.CASCADE)
     developer = models.ForeignKey(User, on_delete=models.CASCADE)
-    task = models.CharField(max_length = 5550)
+    task = models.CharField(max_length = 1000)
+    task_type = models.CharField(max_length = 1000)
+    task_deadline = models.CharField(max_length = 1000)
+    
 
     def __str__(self):
         return str(self.project_title)
