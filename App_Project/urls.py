@@ -4,8 +4,8 @@ from rest_framework import routers, serializers, viewsets
 
 router = routers.DefaultRouter()
 router.register(r'project', views.ProjectViewSet)
-router.register(r'task', views.TaskViewSet)
-router.register(r'activity', views.ActivityViewSet)
+router.register(r'task', views.TaskViewSet,basename="task-list")
+# router.register(r'activity', views.ActivityViewSet)
 
 urlpatterns=[
    path('', include(router.urls)),
