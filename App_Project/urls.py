@@ -9,6 +9,7 @@ router.register(r'task', views.TaskViewSet,basename="task-list")
 
 urlpatterns=[
    path('', include(router.urls)),
+   path('update_task/<pk>/',views.TaskUpdateApiView.as_view(),name='update-task')
    # path('',views.ProjectListCreateView.as_view(),name='project-list'),
    # path('task/',views.TaskListCreateView.as_view(),name='task-list')
 
