@@ -31,7 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     #api root
-    path('project/',include('App_Project.urls')),
+    path('',include('App_Project.urls')),
     path('user/',include('App_Auth.urls')),
     #swagger
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
