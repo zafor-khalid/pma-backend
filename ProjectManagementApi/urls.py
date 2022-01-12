@@ -32,7 +32,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     #api root
     path('',include('App_Project.urls')),
-    path('user/',include('App_Auth.urls')),
+    path('',include('App_Auth.urls')),
     #swagger
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     #auth url

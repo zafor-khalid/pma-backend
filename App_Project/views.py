@@ -10,16 +10,16 @@ from rest_framework.permissions import IsAuthenticated
 class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    # permission_classes = [
-    #     IsAuthenticated,
-    # ]
+    permission_classes = [
+        IsAuthenticated,
+    ]
     
 class TaskViewSet(viewsets.ModelViewSet):
     # queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    # permission_classes = [
-    #     IsAuthenticated,
-    # ]
+    permission_classes = [
+        IsAuthenticated,
+    ]
     def get_queryset(self):
         queryset = Task.objects.all()
         project_id =self.request.query_params.get('project_id',None)
@@ -38,9 +38,9 @@ class TaskViewSet(viewsets.ModelViewSet):
 class TaskUpdateApiView(generics.RetrieveUpdateDestroyAPIView):
     # queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    # permission_classes = [
-    #     IsAuthenticated,
-    # ]
+    permission_classes = [
+        IsAuthenticated,
+    ]
     def get_queryset(self):
         queryset = Task.objects.all()
         project_id =self.request.query_params.get('project_id',None)
