@@ -14,6 +14,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
         IsAuthenticated,
     ]
     
+    
 class TaskViewSet(viewsets.ModelViewSet):
     # queryset = Task.objects.all()
     serializer_class = TaskSerializer
@@ -24,6 +25,7 @@ class TaskViewSet(viewsets.ModelViewSet):
         queryset = Task.objects.all()
         project_id =self.request.query_params.get('project_id',None)
         task_id=self.request.query_params.get('task_id',None)
+        developer=self.request.query_params.get('developer',None)
         print(project_id,task_id)
         if project_id is not None:
             print("project true")
@@ -31,6 +33,9 @@ class TaskViewSet(viewsets.ModelViewSet):
         if project_id and task_id is not None:
             print("task true")
             queryset=Task.objects.filter(project_title_id=project_id).filter(id=task_id)
+        if developer is not None:
+            print("username true")
+            queryset=Task.objects.filter(developer=developer)
         # print(queryset)
         return queryset
 
