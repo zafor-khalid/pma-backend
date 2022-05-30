@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from .serializer import UserSerializer
+from .serializer import UserSerializer,RegisterSerializer
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
+
+from rest_framework import generics
+
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     # queryset = User.objects.all()
@@ -16,3 +19,8 @@ class UserViewSet(viewsets.ModelViewSet):
         if username is not None:
             queryset=User.objects.filter(username=username)
         return queryset
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    permission_classes = (IsAuthenticated,)
+    serializer_class = RegisterSerializer
