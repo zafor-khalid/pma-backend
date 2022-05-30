@@ -24,7 +24,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ('username', 'password', 'password2', 'email', 'first_name', 'last_name')
         extra_kwargs = {
             'first_name': {'required': False},
-            'last_name': {'required': False}
+            'last_name': {'required': False},
+            "password": {"error_messages": {"required": "Give yourself a password"}}
         }
 
     def validate(self, attrs):
