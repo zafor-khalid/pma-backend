@@ -91,12 +91,14 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+         'rest_framework.permissions.AllowAny',
+         'rest_framework.permissions.DjangoModelPermissions',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
       
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
 }
 
 SIMPLE_JWT = {
@@ -128,23 +130,24 @@ WSGI_APPLICATION = 'ProjectManagementApi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': Config.DB_NAME,
-        'USER': Config.DB_USER,
-        'PASSWORD': Config.DB_PASSWORD,
-        'HOST': Config.DB_HOST,
-         'PORT': Config.DB_PORT,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# SQL 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': Config.DB_NAME,
+#         'USER': Config.DB_USER,
+#         'PASSWORD': Config.DB_PASSWORD,
+#         'HOST': Config.DB_HOST,
+#          'PORT': Config.DB_PORT,
+#     }
+# }
 
 
 
