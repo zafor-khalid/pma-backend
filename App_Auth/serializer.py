@@ -13,7 +13,6 @@ class UserSerializer(serializers.ModelSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
             required=False,
-            validators=[UniqueValidator(queryset=User.objects.all())]
             )
 
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
@@ -25,7 +24,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'first_name': {'required': False},
             'last_name': {'required': False},
-            "password": {"error_messages": {"required": "Give yourself a password"}}
         }
 
     def validate(self, attrs):
